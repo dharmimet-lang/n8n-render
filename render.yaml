@@ -2,21 +2,12 @@ services:
   - type: web
     name: n8n-render
     env: docker
+    region: oregon
     plan: free
-    dockerfilePath: Dockerfile
-    autoDeploy: true
     envVars:
       - key: N8N_HOST
-        value: "0.0.0.0"
+        value: 0.0.0.0
       - key: N8N_PORT
-        value: "5678"
-      - key: WEBHOOK_URL
-        value: "https://n8n-render.onrender.com/"
-      - key: N8N_ENCRYPTION_KEY
-        generateValue: true
-      - key: N8N_BASIC_AUTH_ACTIVE
-        value: "false"
-      - key: DB_TYPE
-        value: "sqlite"
-      - key: DB_SQLITE_POOL_SIZE
-        value: "5"
+        value: 5678
+      - key: N8N_PROTOCOL
+        value: http
